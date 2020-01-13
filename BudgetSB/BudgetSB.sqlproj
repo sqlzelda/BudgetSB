@@ -63,6 +63,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="Payment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Vendor.sql" />
