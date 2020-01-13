@@ -68,5 +68,6 @@
     <Build Include="dbo\Tables\Vendor.sql" />
     <Build Include="dbo\Stored Procedures\PostVendor.sql" />
     <Build Include="dbo\Tables\VendorPayment.sql" />
+    <Build Include="Security\Payment.sql" />
   </ItemGroup>
 </Project>
