@@ -36,3 +36,20 @@ steps:
     solution: '$(solution)'
     msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     configuration: '$(buildConfiguration)'
+
+- task: OctopusPush@4
+  inputs:
+    OctoConnectedServiceName: 'Octopus Cloud'
+    Space: 'Spaces-1'
+    Package: '$(Build.ArtifactStagingDirectory)/**/*.nupkg'
+    Replace: 'false'
+
+- task: OctopusCreateRelease@4
+  inputs:
+    OctoConnectedServiceName: 'Octopus Cloud'
+    Space: 'Spaces-1'
+    ProjectName: 'Projects-1'
+    ReleaseNumber: '$(versionNumber)'
+    Channel: 'Channels-1'
+    DeployToEnvironment: 'Environments-1'
+    AdditionalArguments: '--packageversion $(versionNumber)'
