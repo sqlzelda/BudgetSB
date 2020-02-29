@@ -79,8 +79,12 @@
     <Build Include="Security\Payment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="BudgetSB.publish.xml" />
+    <None Include="BudgetSB.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SqlPackage\1033\DacUnpack.rll" />
     <None Include="SqlPackage\en\License_DACFx.txt" />
     <None Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.0\Microsoft.LightSwitch.DacExtensions.dll" />

@@ -9,6 +9,6 @@ CREATE   PROCEDURE dbo.PostVendor
 	@PaymentDate	INT
 AS
 
-	INSERT INTO dbo.Vendor (VendorName, Address1, City, StateName, ZipCode, PaymentDate)
+	INSERT INTO dbo.Vendor(VendorName, Address1, City, StateName, ZipCode, PaymentDate)
 	SELECT @VendorName, @Address1, @City, @StateName, @ZipCode, @PaymentDate
 
