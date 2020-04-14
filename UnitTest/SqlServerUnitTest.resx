@@ -125,7 +125,7 @@ SELECT @RC = 0,
        @VendorID = 0,
        @BudgetAmount = 0,
        @PaymentAmount = 0,
-       @PaymentDate = NULL;
+       @PaymentDate = '12/1/2020';
 
 EXECUTE @RC = [dbo].[PostTransaction] @VendorID, @BudgetAmount, @PaymentAmount, @PaymentDate;
 
