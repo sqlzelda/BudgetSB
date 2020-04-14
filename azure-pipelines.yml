@@ -42,6 +42,7 @@ steps:
       !**\*TestAdapter.dll
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
+    vsTestVersion: '15.0'
     testRunTitle: 'Unit Test - Test'
 
 - task: OctopusPush@4
