@@ -44,7 +44,15 @@ steps:
       Import-Module Pester
       
       Invoke-Pester -Script $(System.DefaultWorkingDirectory)\MyFirstModule.test.ps1 -OutputFile $(System.DefaultWorkingDirectory)\Test-Pester.XML -OutputFormat NUnitXML
-    preferredAzurePowerShellVersion: '5.3.0'
+    errorActionPreference: 'continue'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    failTaskOnFailedTests: true
+    testRunTitle: 'Publish Unit Test Results'
 
 - task: PublishTestResults@2
   inputs:
