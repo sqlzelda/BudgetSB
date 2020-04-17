@@ -40,7 +40,23 @@ steps:
     resultsFile: '$(System.DefaultWorkingDirectory)\Test-Pester.XML'
     usePSCore: False
     run32Bit: False
-    
+
+- task: AzurePowerShell@5
+  inputs:
+    ScriptType: 'InlineScript'
+    Inline: |
+      # This updates pester not always necessary but worth noting
+      Install-Module -Name Pester -Force -SkipPublisherCheck
+      
+      Import-Module Pester
+      
+      Invoke-Pester -Script $(System.DefaultWorkingDirectory)\MyFirstModule.test.ps1 -OutputFile $(System.DefaultWorkingDirectory)\Test-Pester.XML -OutputFormat NUnitXML
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 - task: OctopusPush@4
   inputs:
     OctoConnectedServiceName: 'Octopus Cloud'
