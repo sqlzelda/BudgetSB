@@ -34,18 +34,6 @@ steps:
     msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     configuration: '$(buildConfiguration)'
 
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Resource Group'
-    ConnectedServiceName: 
-    subscriptionName: 
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 
-    location: 'Eastern US'
-    templateLocation: 'Linked artifact'
-    csmFile: 'CreateAzureStorage/azuredeploy.json'
-    deploymentMode: 'Incremental'
-
 - task: AzurePowerShell@5
   inputs:
     ScriptType: 'InlineScript'
