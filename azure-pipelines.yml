@@ -34,6 +34,32 @@ steps:
     msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     configuration: '$(buildConfiguration)'
 
+- task: AzurePowerShell@5
+  inputs:
+    azureSubscription: 'Azure subscription 1(8b9a24c5-ab57-4826-9376-ae5b8cf63776)'
+    ScriptType: 'InlineScript'
+    Inline: |
+      # This updates pester not always necessary but worth noting
+      Install-Module -Name Pester -Force -SkipPublisherCheck
+      
+      Import-Module Pester
+      
+      Invoke-Pester -Script $(System.DefaultWorkingDirectory)\MyFirstModule.test.ps1 -OutputFile $(System.DefaultWorkingDirectory)\Test-Pester.XML -OutputFormat NUnitXML
+    errorActionPreference: 'continue'
+    azurePowerShellVersion: 'LatestVersion'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
+    failTaskOnFailedTests: true
+    testRunTitle: 'Publish Unit Test Results'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 - task: OctopusPush@4
   inputs:
     OctoConnectedServiceName: 'Octopus Cloud'
