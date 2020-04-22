@@ -5,6 +5,11 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BudgetSB", "BudgetSB\BudgetSB.sqlproj", "{3B59E87A-FF77-419D-903D-92AF22676E7B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{45B625A7-A199-4EF3-B45E-29B1E7755614}"
+	ProjectSection(SolutionItems) = preProject
+		PesterTest.ps1 = PesterTest.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
