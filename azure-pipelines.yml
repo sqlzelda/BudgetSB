@@ -36,6 +36,7 @@ steps:
 
 - task: AzurePowerShell@5
   inputs:
+    azureSubscription: 'Azure subscription 1(8b9a24c5-ab57-4826-9376-ae5b8cf63776)'
     ScriptType: 'InlineScript'
     Inline: |
       # This updates pester not always necessary but worth noting
