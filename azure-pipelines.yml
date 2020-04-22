@@ -44,7 +44,7 @@ steps:
       
       Import-Module Pester
       
-      Invoke-Pester -Script $(System.DefaultWorkingDirectory)\MyFirstModule.test.ps1 -OutputFile $(System.DefaultWorkingDirectory)\Test-Pester.XML -OutputFormat NUnitXML
+      Invoke-Pester -Script $(System.DefaultWorkingDirectory)\PesterTest.ps1 -OutputFile $(System.DefaultWorkingDirectory)\Test-Pester.XML -OutputFormat NUnitXML
     errorActionPreference: 'continue'
     azurePowerShellVersion: 'LatestVersion'
 
