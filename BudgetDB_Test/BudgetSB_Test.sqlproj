@@ -248,7 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />
-    <None Include="packages.config" />
+    <None Include="BudgetSB.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="tSQLtCLR">
@@ -261,9 +261,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="BudgetSB.publish.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
