@@ -248,7 +248,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />
-    <None Include="BudgetSB.publish.xml" />
+    <None Include="BudgetSB_Test.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="tSQLtCLR">
