@@ -105,7 +105,6 @@
     <None Include="SqlPackage\Redist_DACFramework.txt" />
     <None Include="SqlPackage\SqlPackage.exe" />
     <None Include="SqlPackage\SqlPackage.exe.config" />
-    <None Include="PesterTest.ps1" />
   </ItemGroup>
   <Import Project="..\packages\OctoPack.3.4.1\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets')" />
   <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
