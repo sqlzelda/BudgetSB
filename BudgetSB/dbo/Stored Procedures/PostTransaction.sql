@@ -1,6 +1,4 @@
-﻿
-
-CREATE   PROCEDURE dbo.PostTransaction
+﻿CREATE   PROCEDURE dbo.PostTransaction
 	@VendorID		INT,
 	@BudgetAmount	DECIMAL(7,2),
 	@PaymentAmount	DECIMAL(7,2),
