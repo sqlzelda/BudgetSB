@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "BudgetDB_Test",
+			"path": "..\\BudgetDB_Test"
+		}
+	],
+	"settings": {
+		"dataworkspace.projects": [
+			"BudgetSB.sqlproj",
+			"..\\BudgetDB_Test\\BudgetSB_Test.sqlproj"
+		]
+	}
+}
