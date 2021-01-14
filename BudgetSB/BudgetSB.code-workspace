@@ -9,6 +9,8 @@
 		}
 	],
 	"settings": {
-		"dataworkspace.projects": []
+		"dataworkspace.projects": [
+			"BudgetSB.sqlproj"
+		]
 	}
 }
