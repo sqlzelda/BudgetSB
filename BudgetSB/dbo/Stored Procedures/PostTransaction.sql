@@ -5,6 +5,6 @@
 	@PaymentDate	DATETIME2
 AS
 
-	INSERT INTO dbo.VendorTransaction(VendorID, BudgetAmount, PaymentAmount, PaymentDate)
+	INSERT INTO dbo.VendorTransaction (VendorID, BudgetAmount, PaymentAmount, PaymentDate)
 	SELECT @VendorID, @BudgetAmount, @PaymentAmount, @PaymentDate
 
