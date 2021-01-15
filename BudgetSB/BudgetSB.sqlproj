@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -55,30 +55,32 @@
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
-  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets"/>
-  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets"/>
+  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(NetCoreBuild)' != 'true' AND '$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
-    <Folder Include="Properties"/>
-    <Folder Include="dbo\"/>
-    <Folder Include="dbo\Tables\"/>
-    <Folder Include="dbo\Stored Procedures\"/>
-    <Folder Include="Security\"/>
-    <Folder Include="SqlPackage\"/>
-    <Folder Include="SqlPackage\1033\"/>
-    <Folder Include="SqlPackage\en\"/>
-    <Folder Include="SqlPackage\Extensions\"/>
-    <Folder Include="SqlPackage\Extensions\Microsoft\"/>
-    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\"/>
-    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\"/>
-    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.0\"/>
-    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.5\"/>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="SqlPackage\" />
+    <Folder Include="SqlPackage\1033\" />
+    <Folder Include="SqlPackage\en\" />
+    <Folder Include="SqlPackage\Extensions\" />
+    <Folder Include="SqlPackage\Extensions\Microsoft\" />
+    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\" />
+    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\" />
+    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.0\" />
+    <Folder Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.5\" />
+    <Folder Include="dbo\Payment" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Vendor.sql"/>
-    <Build Include="dbo\Stored Procedures\PostVendor.sql"/>
-    <Build Include="Security\Payment.sql"/>
-    <Build Include="dbo\Tables\VendorTransaction.sql"/>
-    <Build Include="dbo\Stored Procedures\PostTransaction.sql"/>
+    <Build Include="dbo\Tables\Vendor.sql" />
+    <Build Include="dbo\Stored Procedures\PostVendor.sql" />
+    <Build Include="Security\Payment.sql" />
+    <Build Include="dbo\Tables\VendorTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\PostTransaction.sql" />
+    <Build Include="dbo\Payment\PostVendor.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BudgetSB.publish.xml">
@@ -87,35 +89,35 @@
     <None Include="packages.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="SqlPackage\1033\DacUnpack.rll"/>
-    <None Include="SqlPackage\en\License_DACFx.txt"/>
-    <None Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.0\Microsoft.LightSwitch.DacExtensions.dll"/>
-    <None Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.DacExtensions.dll"/>
-    <None Include="SqlPackage\Extensions\Readme.txt"/>
-    <None Include="SqlPackage\DacUnpack.exe"/>
-    <None Include="SqlPackage\Microsoft.Data.Tools.Contracts.12.dll"/>
-    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Sql.dll"/>
-    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Tasks.Sql.12.dll"/>
-    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Utilities.Sql.12.dll"/>
-    <None Include="SqlPackage\Microsoft.Data.Tools.Utilities.dll"/>
-    <None Include="SqlPackage\Microsoft.SqlServer.Dac.dll"/>
-    <None Include="SqlPackage\Microsoft.SqlServer.Dac.Extensions.dll"/>
-    <None Include="SqlPackage\Microsoft.SqlServer.Dac.Extensions.xml"/>
-    <None Include="SqlPackage\Microsoft.SqlServer.Dac.xml"/>
-    <None Include="SqlPackage\Redist_DACFramework.txt"/>
-    <None Include="SqlPackage\SqlPackage.exe"/>
-    <None Include="SqlPackage\SqlPackage.exe.config"/>
+    <None Include="SqlPackage\1033\DacUnpack.rll" />
+    <None Include="SqlPackage\en\License_DACFx.txt" />
+    <None Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.0\Microsoft.LightSwitch.DacExtensions.dll" />
+    <None Include="SqlPackage\Extensions\Microsoft\VisualStudio\LightSwitch\v4.5\Microsoft.LightSwitch.DacExtensions.dll" />
+    <None Include="SqlPackage\Extensions\Readme.txt" />
+    <None Include="SqlPackage\DacUnpack.exe" />
+    <None Include="SqlPackage\Microsoft.Data.Tools.Contracts.12.dll" />
+    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Sql.dll" />
+    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Tasks.Sql.12.dll" />
+    <None Include="SqlPackage\Microsoft.Data.Tools.Schema.Utilities.Sql.12.dll" />
+    <None Include="SqlPackage\Microsoft.Data.Tools.Utilities.dll" />
+    <None Include="SqlPackage\Microsoft.SqlServer.Dac.dll" />
+    <None Include="SqlPackage\Microsoft.SqlServer.Dac.Extensions.dll" />
+    <None Include="SqlPackage\Microsoft.SqlServer.Dac.Extensions.xml" />
+    <None Include="SqlPackage\Microsoft.SqlServer.Dac.xml" />
+    <None Include="SqlPackage\Redist_DACFramework.txt" />
+    <None Include="SqlPackage\SqlPackage.exe" />
+    <None Include="SqlPackage\SqlPackage.exe.config" />
   </ItemGroup>
-  <Import Project="..\packages\OctoPack.3.4.1\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets')"/>
+  <Import Project="..\packages\OctoPack.3.4.1\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets')" />
   <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
-    <Error Condition="!Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001"/>
-    <Error Condition="Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002"/>
+    <Error Condition="!Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\OctoPack.3.4.1\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
-  <Import Condition="'$(NetCoreBuild)' == 'true'" Project="$(NETCoreTargetsPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets"/>
+  <Import Condition="'$(NetCoreBuild)' == 'true'" Project="$(NETCoreTargetsPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
-    <PackageReference Condition="'$(NetCoreBuild)' == 'true'" Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Condition="'$(NetCoreBuild)' == 'true'" Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
   <Target Name="AfterClean">
-    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json"/>
+    <Delete Files="$(BaseIntermediateOutputPath)\project.assets.json" />
   </Target>
 </Project>
